@@ -34,12 +34,20 @@ const Header = () => {
       }}
     >
       {/* LEFT: Logo Section */}
-      <div className="flex items-center gap-2 cursor-pointer shrink-0" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-        <ShieldCheck className="w-5 h-5 text-blue-400" />
-        <span className="text-lg font-bold tracking-tight text-white uppercase hidden sm:block">
-          FORETYX
-        </span>
-      </div>
+      <div
+  className="group flex items-center gap-4 cursor-pointer shrink-0 translate-y-[1px]"
+  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+>
+  <img
+    src="/foretyx-logo-white.png"
+    alt="Foretyx Logo"
+    className="h-10 w-auto drop-shadow-[0_0_6px_rgba(255,255,255,0.18)]"
+  />
+
+  <span className="hidden sm:block text-lg font-bold uppercase tracking-[0.18em] text-white leading-none">
+    FORETYX
+  </span>
+</div>
 
       {/* CENTER: Platform Navigation */}
       <nav className="hidden md:flex items-center gap-8">

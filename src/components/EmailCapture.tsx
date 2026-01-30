@@ -42,10 +42,8 @@ const EmailCapture = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              // UPDATED: Success border color to Blue theme
               className="bg-secondary border border-[#AADDEC]/20 rounded-xl p-8"
             >
-              {/* UPDATED: Success Icon to Sky Blue */}
               <CheckCircle2 className="w-12 h-12 text-[#AADDEC] mx-auto mb-4" />
               <p className="text-foreground font-medium text-lg">You're on the list.</p>
               <p className="text-muted-foreground text-sm mt-2">
@@ -60,10 +58,14 @@ const EmailCapture = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                // UPDATED: Focus ring color to Sky Blue (#AADDEC)
-                className="h-14 text-base bg-secondary border-border placeholder:text-muted-foreground focus:ring-2 focus:ring-[#AADDEC]/50 focus:border-[#AADDEC] transition-all"
+                // UPDATED:
+                // 1. Removed 'focus:ring-2' (the fuzzy glow).
+                // 2. Added 'focus-visible:ring-0' and 'focus-visible:ring-offset-0' to kill default browser rings.
+                // 3. Added 'focus:border-[#AADDEC]' for a sharp, solid blue border line.
+                className="h-14 text-base bg-secondary border-white/10 placeholder:text-muted-foreground/50 
+                           focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-[#AADDEC] 
+                           transition-colors duration-200"
               />
-              {/* UPDATED: Button matches the new Sky Blue Hover Effect */}
               <Button
                 type="submit"
                 size="lg"
@@ -73,7 +75,7 @@ const EmailCapture = () => {
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
               <p className="text-xs text-muted-foreground pt-2">
-               Please Do Not Fill Temporary Emails.
+                No spam. Unsubscribe anytime.
               </p>
             </form>
           )}
